@@ -1,43 +1,26 @@
-const ol$$ = document.querySelector('#pokedex');
+const pokemonsContainer$$ = document.querySelector('#pokedex');
 
 const getPokemonsApi = async () => {
-    let maxPokemon = 2; 
+    let maxPokemon = 150; 
     for (let index = 1; index <= maxPokemon; index++) {
-        const PokemonApi = await fetch ("https://pokeapi.co/api/v2/pokemon/"+ index)
-            .then(result => result.json().then(data => {
-                const pokemon = data.map((result) => ({
-                            name: result.name,
-                            image: result.sprites.front_default,
-                            id: result.id
-                        }))
-            }))
-            .then(
-                // response => {
-                //     const pokemon = response.map((result) => ({
-                //         name: result.name,
-                //         image: result.sprites.front_default,
-                //         id: result.id
-                //     }))
-
-
-                //     printPokemon(response.data);
-                
-                // }
-            )            
+        const PokemonApi = await fetch (`https://pokeapi.co/api/v2/pokemon/${index}`)
+            .then(result => result.json())
+            .then(data => printPokemon(data))            
     }
 }
 
 const printPokemon = (pokemon) => {
-    console.log(pokemon)
- 
-    const pokemonHTML =`<li>${pokemon.name}</li> `
-                        
+    const pokemonHTML =`
+        <div>
+            <h3>${pokemon.name}</h3>
+            <img src="${pokemon.sprites.front_default}"/>
+        </div>
+    `;
+    const newPokemon = document.createElement("div");
+    newPokemon.classList.add("col-4");
+    newPokemon.innerHTML = pokemonHTML;
 
-    
-
-    let newLi = document.createElement("li");
-
-    ol$$.appendChild(newLi);
-
+    pokemonsContainer$$.appendChild(newPokemon);
 }
+
 getPokemonsApi();

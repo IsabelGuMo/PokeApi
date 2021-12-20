@@ -3,7 +3,7 @@ const pokemonsContainer$$ = document.querySelector('#pokedex');
 const getPokemonsApi = async () => {
     let maxPokemon = 150; 
     for (let index = 1; index <= maxPokemon; index++) {
-        const PokemonApi = await fetch (`https://pokeapi.co/api/v2/pokemon/${index}`)
+        await fetch (`https://pokeapi.co/api/v2/pokemon/${index}`)
             .then(result => result.json())
             .then(data => printPokemon(data))            
     }
@@ -11,10 +11,10 @@ const getPokemonsApi = async () => {
 
 const printPokemon = (pokemon) => {
     const pokemonHTML =`
-        <div class="card" style="width: 18rem">
-            <img src="${pokemon.sprites.front_default}" class="card-img-top"/>
-            <div class="card-body">
-                <h3>${pokemon.name}</h3>
+        <div class="card pokemon-card">
+            <img src="${pokemon.sprites.front_default}" width="96" class="mx-auto d-block" "rounded-pill"/>
+            <div class="card-body text-center" </div>
+                <h5 class="card-title">${pokemon.name}</h5>
             </div>
         </div>
     `;

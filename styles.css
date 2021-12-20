@@ -1,0 +1,29 @@
+
+
+body {
+    
+    background-image: url("/images/background_img2.jpeg");
+    background-position: cover; 
+    background-attachment: fixed ; 
+    background-repeat: no-repeat; 
+}
+.pokemon-card {
+    background-image: url("/blob.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 50px;
+    margin-bottom: 20px;
+    width: 15rem;
+}
+
+.title {
+    background-color: whitesmoke;
+    opacity: 0.5;
+}
+
+h1 {
+    color: darkblue;
+    padding: 20px;
+    text-align: center;
+}
+

@@ -1,7 +1,6 @@
 
 
 body {
-    
     background-image: url("/images/background_img2.jpeg");
     background-position: cover; 
     background-attachment: fixed ; 
@@ -13,12 +12,22 @@ body {
     background-position: center;
     padding-top: 50px;
     margin-bottom: 20px;
+    margin-left: 90px;
     width: 15rem;
+    transition: transform 0.8s;
+    font-family: 'Oswald', sans-serif;
+}
+
+.pokemon-card:hover {
+    transition: transform 0.8s;
+    transform: rotateY(180deg);
+    
 }
 
 .title {
     background-color: whitesmoke;
     opacity: 0.5;
+    font-family: 'Oswald', sans-serif;
 }
 
 h1 {

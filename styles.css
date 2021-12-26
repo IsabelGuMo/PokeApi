@@ -20,18 +20,27 @@ body {
 
 .pokemon-card:hover {
     transition: transform 0.8s;
-    transform: rotateY(180deg);
-    
+    transform: rotateY(180deg);    
 }
 
 .title {
     background-color: whitesmoke;
-    opacity: 0.5;
-    font-family: 'Oswald', sans-serif;
+    opacity: 0.7;
+    font-family: 'Oswald', sans-serif;   
 }
 
-h1 {
-    color: darkblue;
+.pokeball {
+    background-image: url("https://c.tenor.com/Hg2Mb_mQdhYAAAAi/pokemon-pokeball.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+img {
+    margin-left: 35% ;   
+}
+
+h2 {
+    color: crimson;
     padding: 20px;
     text-align: center;
 }

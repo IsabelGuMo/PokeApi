@@ -10,17 +10,21 @@ const getPokemonsApi = async () => {
 }
 
 const printPokemon = (pokemon) => {
-    const newPokemon = document.createElement("div");
-    newPokemon.classList.add("col-4");
+    const newPokemon = document.createElement('div');
+    newPokemon.classList.add('col-4');
     
-    const pokemonHTML =`
-        <div class="card pokemon-card">
-            <img src="${pokemon.sprites.front_default}" width="96" class="mx-auto d-block"/>
-            <div class="card-body text-center" </div>
-                <h5 class="card-title">${pokemon.name}</h5>
+    const pokemonHTML = `
+        <div class="card pokemon-card" style="width: 18 rem;">        
+            <img src="${pokemon.sprites.other.dream_world.front_default}" class="card-img-top" width: "96 rem"/>
+            <div class="card-body text-center">
             </div>
-        </div>
-    `;
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">${pokemon.name}</li>
+                <li class="list-group-item">id: ${pokemon.id}</li>
+                <li class="list-group-item">A third item</li>
+            </ul> 
+        </div>`;
+    
     newPokemon.innerHTML = pokemonHTML;
 
     pokemonsContainer$$.appendChild(newPokemon);

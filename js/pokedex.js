@@ -12,6 +12,14 @@ const getPokemonsApi = async () => {
 const printPokemon = (pokemon) => {
     const newPokemon = document.createElement("div");
     newPokemon.classList.add("col", "mb-5");
+
+    const typesIcons = pokemon.types.map(type => {
+        return `
+            <div class="icon ${type.type.name}">
+                <img src="images/icons/${type.type.name}.svg"/>
+            </div>`;
+    });
+    
     
     const pokemonHTML =`
         <div class="card h-100 pokemon-card pokemon-card-${pokemon.types[0].type.name}">
@@ -23,7 +31,9 @@ const printPokemon = (pokemon) => {
                 </div>
             </div>
             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
+                <div class="icon-container">
+                    ${typesIcons.join('')}
+                </div>
             </div>
         </div>
     `;

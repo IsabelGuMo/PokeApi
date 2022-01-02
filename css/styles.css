@@ -97,4 +97,20 @@ body {
     background: linear-gradient(to bottom, #929ba2, white 35%);
 }
 
+.icon {
+    border-radius: 100%;
+    height: 26px;
+    width: 26px;
+    background-color: #7F7C82;
+    margin: auto;
+}
 
+.icon img {
+    height: 60%;
+    width: 60%;
+    margin: 20%;
+}
+
+.icon-container {
+    display: flex;
+}

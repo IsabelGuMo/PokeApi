@@ -20,7 +20,6 @@ const printPokemon = (pokemon) => {
             </div>`;
     });
     
-    
     const pokemonHTML =`
         <div class="card h-100 pokemon-card pokemon-card-${pokemon.types[0].type.name}">
             <img src="${pokemon.sprites.other.dream_world.front_default}" class="card-img-top"/>

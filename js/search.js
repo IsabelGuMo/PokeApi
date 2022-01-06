@@ -1,16 +1,30 @@
 const search = (event) => {
     event.preventDefault(); // evita que el formulario se envie
 
-    const searchTerm$$ = event.target.elements['search-term'];
+    const searchForm$$ = event.target; 
+    const searchTerm$$ = searchForm$$.elements['search-term'];
     const searchTerm = searchTerm$$.value.trim().toLowerCase();
 
     if (searchTerm === '') {
-        alert('Escribe algo!!');
+        alert("Type your Pokémon's name or class!!");
+
+        return;
     }
-    console.log(searchTerm);
+
+    const pokemonCards$$ = document.querySelectorAll('[data-fn="pokemon-card"]'); 
+    for (let pokemonCard$$ of pokemonCards$$) {
+        let pokemonName$$ = pokemonCard$$.querySelector('[data-fn="pokemon-name"]');
+        let pokemonName = pokemonName$$.textContent;
+        if (searchTerm != pokemonName) {
+            pokemonCard$$.style.display = 'none';
+        } else {
+            pokemonCard$$.style.display = 'block';
+        }
+    }
 }; 
 
 
 const searchForm$$ = document.querySelector('#search-form');
 
 searchForm$$.addEventListener('submit', search);
+

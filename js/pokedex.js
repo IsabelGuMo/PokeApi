@@ -15,17 +15,17 @@ const printPokemon = (pokemon) => {
 
     const typesIcons = pokemon.types.map(type => {
         return `
-            <div class="icon ${type.type.name}">
+            <div data-pokemon-type="${type.type.name}" class="icon ${type.type.name}">
                 <img src="images/icons/${type.type.name}.svg"/>
             </div>`;
     });
     
     const pokemonHTML =`
-        <div class="card h-100 pokemon-card pokemon-card-${pokemon.types[0].type.name}">
+        <div data-fn="pokemon-card" class="card h-100 pokemon-card pokemon-card-${pokemon.types[0].type.name}">
             <img src="${pokemon.sprites.other.dream_world.front_default}" class="card-img-top"/>
             <div class="card-body p-4">
                 <div class="text-center">
-                    <h5 class="fw-bolder">${pokemon.name}</h5>
+                    <h5 data-fn="pokemon-name" class="fw-bolder">${pokemon.name}</h5>
                     height: ${pokemon.height} - weight: ${pokemon.weight}
                 </div>
             </div>

@@ -1,0 +1,116 @@
+
+
+body {
+    background-image: url("/images/background_img2.jpeg");
+    background-position: cover; 
+    background-attachment: fixed ; 
+    background-repeat: no-repeat; 
+}
+
+.logo {
+    width: 300px;
+}
+
+.card-img-top {
+    width: 50%;
+    height: 120px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+
+.pokemon-card {
+    border-color: white;
+    background-size: 50% auto;
+}
+
+.pokemon-card-grass {
+    background: linear-gradient(to bottom, #38bf4b, white 35%);
+}
+
+.pokemon-card-bug {
+    background: linear-gradient(to bottom, #84c402, white 35%);
+}
+
+.pokemon-card-ice {
+    background: linear-gradient(to bottom, #4bd2c1, white 35%);
+}
+
+.pokemon-card-flying {
+    background: linear-gradient(to bottom, #8aace4, white 35%);
+}
+
+.pokemon-card-electric {
+    background: linear-gradient(to bottom, #fbd202, white 35%);
+}
+
+.pokemon-card-dark {
+    background: linear-gradient(to bottom, #5b5466, white 35%);
+}
+
+.pokemon-card-steel {
+    background: linear-gradient(to bottom, #5a8ea2, white 35%);
+}
+
+.pokemon-card-ghost {
+    background: linear-gradient(to bottom, #4d6ab2, white 35%);
+}
+
+.pokemon-card-poison {
+    background: linear-gradient(to bottom, #b567ce, white 35%);
+}
+
+.pokemon-card-fairy {
+    background: linear-gradient(to bottom, #fa8aec, white 35%);
+}
+
+.pokemon-card-fighting {
+    background: linear-gradient(to bottom, #e0306a, white 35%);
+}
+
+.pokemon-card-fire {
+    background: linear-gradient(to bottom, #fc9741, white 35%);
+}
+
+.pokemon-card-psychic {
+    background: linear-gradient(to bottom, #fa6677, white 35%);
+}
+
+.pokemon-card-water {
+    background: linear-gradient(to bottom, #3393dd, white 35%);
+}
+
+.pokemon-card-ground {
+    background: linear-gradient(to bottom, #e87236, white 35%);
+}
+
+.pokemon-card-rock {
+    background: linear-gradient(to bottom, #c9b786, white 35%);
+}
+
+.pokemon-card-dragon {
+    background: linear-gradient(to bottom, #006fca, white 35%);
+}
+
+.pokemon-card-normal {
+    background: linear-gradient(to bottom, #929ba2, white 35%);
+}
+
+.icon {
+    border-radius: 100%;
+    height: 26px;
+    width: 26px;
+    background-color: #7F7C82;
+    margin: auto;
+}
+
+.icon img {
+    height: 60%;
+    width: 60%;
+    margin: 20%;
+}
+
+.icon-container {
+    display: flex;
+}

@@ -1,7 +1,7 @@
 
 
 body {
-    background-image: url("/images/background_img2.jpeg");
+    background-image: url("../images/background_img2.jpeg");
     background-position: cover; 
     background-attachment: fixed ; 
     background-repeat: no-repeat;

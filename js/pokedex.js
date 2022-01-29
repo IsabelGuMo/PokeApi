@@ -1,4 +1,17 @@
 const pokemonsContainer$$ = document.querySelector('#pokedex');
+const pokemonSearch = [];
+const inputSearch = new Autocomplete(
+    document.querySelector('#inputSearch'),
+    {
+        data: [{label: '', value: 0}],
+        maximumItems: 10,
+        treshold: 1,
+        highlightTyped: true, 
+        onSelectItem: ({label, value}) => {
+            console.log('pokemon selected', label, value);
+        } 
+    }
+);
 
 const getPokemonsApi = async () => {
     let maxPokemon = 150; 
@@ -7,7 +20,7 @@ const getPokemonsApi = async () => {
             .then(result => result.json())
             .then(data => printPokemon(data))            
     }
-}
+};
 
 const printPokemon = (pokemon) => {
     const newPokemon = document.createElement("div");
@@ -21,7 +34,7 @@ const printPokemon = (pokemon) => {
     });
     
     const pokemonHTML =`
-        <div data-fn="pokemon-card" class="card h-100 pokemon-card pokemon-card-${pokemon.types[0].type.name}">
+        <div data-fn="pokemon-card" id="${pokemon.id}" class="card h-100 pokemon-card pokemon-card-${pokemon.types[0].type.name}">
             <img src="${pokemon.sprites.other.dream_world.front_default}" class="card-img-top"/>
             <div class="card-body p-4">
                 <div class="text-center">
@@ -39,6 +52,13 @@ const printPokemon = (pokemon) => {
     newPokemon.innerHTML = pokemonHTML;
 
     pokemonsContainer$$.appendChild(newPokemon);
-}
+
+    pokemonSearch.push({
+        label: pokemon.name, 
+        value: pokemon.id,
+    });
+
+    inputSearch.setData(pokemonSearch);
+};
 
 getPokemonsApi();

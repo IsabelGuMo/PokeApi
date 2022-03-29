@@ -1,18 +1,5 @@
 const pokemonsContainer$$ = document.querySelector('#pokedex');
 const pokemonSearch = [];
-const inputSearch = new Autocomplete(
-    document.querySelector('#inputSearch'),
-    {
-        data: [{label: '', value: 0}],
-        maximumItems: 10,
-        treshold: 1,
-        highlightTyped: true, 
-        onSelectItem: ({label, value}) => {
-            console.log('pokemon selected', label, value);
-        } 
-    }
-);
-
 const getPokemonsApi = async () => {
     let maxPokemon = 150; 
     for (let index = 1; index <= maxPokemon; index++) {
@@ -57,8 +44,6 @@ const printPokemon = (pokemon) => {
         label: pokemon.name, 
         value: pokemon.id,
     });
-
-    inputSearch.setData(pokemonSearch);
 };
 
 getPokemonsApi();
